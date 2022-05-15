@@ -14,6 +14,9 @@ import { AlertaComponent } from './components/alerta/alerta.component';
 import { LoginComponent } from './components/login/login.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { RequisicaoInterceptor } from './interceptors/requisicao.interceptor';
+import { PacienteListComponent } from './components/paciente-list/paciente-list.component';
+import { PacienteFormComponent } from './components/paciente-form/paciente-form.component';
+
 
 @NgModule({
   declarations: [
@@ -24,13 +27,15 @@ import { RequisicaoInterceptor } from './interceptors/requisicao.interceptor';
     BarraComandosComponent,
     AlertaComponent,
     LoginComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    PacienteListComponent,
+    PacienteFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErroInterceptor, multi: true },
