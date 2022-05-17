@@ -14,6 +14,7 @@ import { AlertaComponent } from './components/alerta/alerta.component';
 import { LoginComponent } from './components/login/login.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { RequisicaoInterceptor } from './interceptors/requisicao.interceptor';
+import { UnidadesComponent } from './components/unidades/unidades.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { RequisicaoInterceptor } from './interceptors/requisicao.interceptor';
     BarraComandosComponent,
     AlertaComponent,
     LoginComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    UnidadesComponent
   ],
   imports: [
     BrowserModule,
