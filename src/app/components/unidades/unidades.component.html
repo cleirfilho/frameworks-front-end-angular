@@ -14,7 +14,7 @@
       <td class="fit">{{r.nome}}</td>
       <td class="fit">{{r.endereco}}</td>
       <td>
-        <a routerLink="/unidade/form" [queryParams]="{id: r.id}" class="botao">Editar</a>
+        <a routerLink="/config/unidades/form" [queryParams]="{id: r.id}" class="botao">Editar</a>
         <a (click)="delete(r.id)" class="botao cancelar">Excluir</a>
       </td>
     </tr>
