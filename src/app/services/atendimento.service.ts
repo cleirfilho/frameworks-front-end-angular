@@ -45,4 +45,15 @@ export class AtendimentoService implements ICrudService<Atendimento> {
     return this.http.put<Atendimento>(url, null);
   }
 
+  //CONECTA AO ENDPOINT E RETORNA A LISTA DE PROFISSIONAIS PELO ID
+  getFiltro(termoBusca?: string): Observable<Atendimento[]> {
+    let url = this.apiUrl;
+    if (termoBusca) {
+      url += 'busca/profissional/' + termoBusca;
+
+    }
+    return this.http.get<Atendimento[]>(url);
+
+  }
+
 }

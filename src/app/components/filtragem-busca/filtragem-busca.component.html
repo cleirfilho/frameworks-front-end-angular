@@ -1,0 +1,11 @@
+<div id="comandos">
+    <a routerLink="./form" class="botao">Adicionar</a>
+    <div>
+        <label for="profissional">Filtrar profissional</label>
+        <select [(ngModel)]="registro.profissional" #termoBusca="ngModel" ngModel (ngModelChange)="busca(termoBusca.value)">
+            <option value="">Listar todos</option>
+            <option *ngFor="let item of profissionais" [ngValue]="item.id">{{item.nome}}</option>
+        </select>
+    </div>
+</div>
+

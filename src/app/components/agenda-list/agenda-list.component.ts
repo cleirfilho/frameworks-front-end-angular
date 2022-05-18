@@ -51,6 +51,17 @@ export class AgendaListComponent implements OnInit, IComponentList<Atendimento> 
     }
   }
 
+  //MÉTODO DE FILTRAGEM QUE É CHAMADO NO "APP-FILTRAGEM-BUSCA"
+  getFiltro(termoBusca?: string): void {
+    this.servico.getFiltro(termoBusca).subscribe({
+      next: (resposta: Atendimento[]) => {
+        this.registros = resposta.filter(item => {
+          return ['AGENDADO', 'CONFIRMADO'].includes(item.status);
+        });
+      }
+    })
+  }
+
   ngOnInit(): void {
     this.get();
   }

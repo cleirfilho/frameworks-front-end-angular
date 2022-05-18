@@ -16,6 +16,7 @@ import { UsuarioComponent } from './components/usuario/usuario.component';
 import { RequisicaoInterceptor } from './interceptors/requisicao.interceptor';
 import { PacienteListComponent } from './components/paciente-list/paciente-list.component';
 import { PacienteFormComponent } from './components/paciente-form/paciente-form.component';
+import { FiltragemBuscaComponent } from './components/filtragem-busca/filtragem-busca.component'
 
 
 @NgModule({
@@ -29,7 +30,9 @@ import { PacienteFormComponent } from './components/paciente-form/paciente-form.
     LoginComponent,
     UsuarioComponent,
     PacienteListComponent,
-    PacienteFormComponent
+    PacienteFormComponent,
+    FiltragemBuscaComponent,
+    
   ],
   imports: [
     BrowserModule,
