@@ -4,6 +4,7 @@ import { AgendaFormComponent } from './components/agenda-form/agenda-form.compon
 import { AgendaListComponent } from './components/agenda-list/agenda-list.component';
 import { AtendimentoListComponent } from './components/atendimento-list/atendimento-list.component';
 import { LoginComponent } from './components/login/login.component';
+import { ProfissionalComponent } from './components/profissional/profissional.component';
 import { UnidadeFormComponent } from './components/unidade-form/unidade-form.component';
 import { UnidadesComponent } from './components/unidades/unidades.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
     { path: 'agenda', component: AgendaListComponent },
     { path: 'agenda/form', component: AgendaFormComponent },
     { path: 'atendimento', component: AtendimentoListComponent},
+    { path: 'profissionais', component: ProfissionalComponent},
     { path: 'config', canActivate: [AutenticacaoGuard], data: {papel: "ROLE_ADMIN"}, children: [
       { path: 'usuarios', component: UsuarioComponent},
       { path: 'unidades', component: UnidadesComponent},

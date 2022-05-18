@@ -16,6 +16,7 @@ import { UsuarioComponent } from './components/usuario/usuario.component';
 import { RequisicaoInterceptor } from './interceptors/requisicao.interceptor';
 import { UnidadesComponent } from './components/unidades/unidades.component';
 import { UnidadeFormComponent } from './components/unidade-form/unidade-form.component';
+import { ProfissionalComponent } from './components/profissional/profissional.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { UnidadeFormComponent } from './components/unidade-form/unidade-form.com
     LoginComponent,
     UsuarioComponent,
     UnidadesComponent,
-    UnidadeFormComponent
+    UnidadeFormComponent,
+    ProfissionalComponent
   ],
   imports: [
     BrowserModule,
