@@ -17,6 +17,7 @@ import { RequisicaoInterceptor } from './interceptors/requisicao.interceptor';
 import { UnidadesComponent } from './components/unidades/unidades.component';
 import { UnidadeFormComponent } from './components/unidade-form/unidade-form.component';
 import { ProfissionalComponent } from './components/profissional/profissional.component';
+import { ProfissionalFormComponent } from './components/profissional-form/profissional-form.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ProfissionalComponent } from './components/profissional/profissional.co
     UsuarioComponent,
     UnidadesComponent,
     UnidadeFormComponent,
-    ProfissionalComponent
+    ProfissionalComponent,
+    ProfissionalFormComponent
   ],
   imports: [
     BrowserModule,

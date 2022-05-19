@@ -22,7 +22,7 @@
             <td>{{r.telefone}}</td>
             <td>{{r.email}}</td>
             <td>
-                <a routerLink="/config/unidades/form" [queryParams]="{id: r.id}" class="botao">Editar</a>
+                <a routerLink="/profissionais/form" [queryParams]="{id: r.id}" class="botao">Editar</a>
                 <a (click)="delete(r.id)" class="botao cancelar">Excluir</a>
             </td>
         </tr>
