@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Especialidade } from 'src/app/models/especialidade';
 import { Profissional } from 'src/app/models/profissional';
 import { Unidade } from 'src/app/models/unidade';
 import { AlertaService } from 'src/app/services/alerta.service';
+import { EspecialidadeService } from 'src/app/services/especialidade.service';
 import { ProfissionalService } from 'src/app/services/profissional.service';
 import { UnidadesService } from 'src/app/services/unidades.service';
 import { Utils } from 'src/app/utils/utils';
@@ -21,13 +23,15 @@ export class ProfissionalFormComponent implements OnInit, IComponentForm<Profiss
     private route: ActivatedRoute,
     private router: Router,
     private servicoAlerta: AlertaService,
-    private servicoUnidade: UnidadesService
+    private servicoUnidade: UnidadesService,
+    private servicoEspecialidade : EspecialidadeService
   ) { }
 
   unidades : Unidade [] = Array<Unidade>();
+  especialidade : Especialidade [] = Array<Especialidade>();
   registro: Profissional = <Profissional>{};
   compareById = Utils.compareById;
-  
+
 
   submit(form: NgForm): void {
     if (this.registro.id) {
@@ -62,7 +66,13 @@ export class ProfissionalFormComponent implements OnInit, IComponentForm<Profiss
         this.unidades = resposta;
       }
     })
-   
+
+    this.servicoEspecialidade.get().subscribe({
+      next: (resposta : Especialidade[]) => {
+        this.especialidade = resposta;
+      }
+    })
+
   }
 
 }

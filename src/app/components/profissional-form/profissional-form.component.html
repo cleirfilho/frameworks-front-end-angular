@@ -7,10 +7,7 @@
         <input type="text"  [(ngModel)]="registro.registroConselho" name="registroConselho" id="registroConselho" required>
         <label for="especialidade">Especialidade</label>
         <select [(ngModel)]="registro.especialidade" [compareWith]="compareById"  name="especialidade" id="especialidade" required>
-            <option value="">Selecione</option>
-            <option value="1">Oncologia</option>
-            <option value="2">Dermatologia</option>
-            <option value="3">Cardiologia</option>
+          <option *ngFor="let item of especialidade" [ngValue]="item">{{item.nome}}</option>
         </select>
         <label for="unidade">Unidade</label>
         <select [(ngModel)]="registro.unidade" [compareWith]="compareById" name="unidade" id="unidade" required>

@@ -18,6 +18,8 @@ import { UnidadesComponent } from './components/unidades/unidades.component';
 import { UnidadeFormComponent } from './components/unidade-form/unidade-form.component';
 import { ProfissionalComponent } from './components/profissional/profissional.component';
 import { ProfissionalFormComponent } from './components/profissional-form/profissional-form.component';
+import { EspecialidadeComponent } from './components/especialidade/especialidade.component';
+import { EspecialidadeFormComponent } from './components/especialidade-form/especialidade-form.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { ProfissionalFormComponent } from './components/profissional-form/profis
     UnidadesComponent,
     UnidadeFormComponent,
     ProfissionalComponent,
-    ProfissionalFormComponent
+    ProfissionalFormComponent,
+    EspecialidadeComponent,
+    EspecialidadeFormComponent
   ],
   imports: [
     BrowserModule,

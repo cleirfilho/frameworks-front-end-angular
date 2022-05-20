@@ -1,25 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { Profissional } from 'src/app/models/profissional';
+import { Especialidade } from 'src/app/models/especialidade';
 import { AlertaService } from 'src/app/services/alerta.service';
-import { ProfissionalService } from 'src/app/services/profissional.service';
+import { EspecialidadeService } from 'src/app/services/especialidade.service';
 import { IComponentList } from '../i-component-list';
 
 @Component({
-  selector: 'app-Profissional',
-  templateUrl: './profissional.component.html',
-  styleUrls: ['./profissional.component.css']
+  selector: 'app-especialidade',
+  templateUrl: './especialidade.component.html',
+  styleUrls: ['./especialidade.component.css']
 })
-export class ProfissionalComponent implements OnInit, IComponentList<Profissional> {
+export class EspecialidadeComponent implements OnInit, IComponentList<Especialidade> {
 
   constructor(
-    private servico:ProfissionalService,
+    private servico : EspecialidadeService,
     private servicoAlerta: AlertaService
+
   ) { }
-  registros: Profissional[] = Array<Profissional>();
+
+  registros: Especialidade[] = Array<Especialidade>();
 
   get(termoBusca?: string): void {
     this.servico.get(termoBusca).subscribe({
-      next: (reposta : Profissional[]) => {
+      next: (reposta : Especialidade[]) => {
         this.registros = reposta;
       }
     })
@@ -32,8 +34,8 @@ export class ProfissionalComponent implements OnInit, IComponentList<Profissiona
           this.servicoAlerta.enviarAlertaSucesso();
         }
       })
+    }
   }
-}
 
   ngOnInit(): void {
     this.get()

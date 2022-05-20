@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AgendaFormComponent } from './components/agenda-form/agenda-form.component';
 import { AgendaListComponent } from './components/agenda-list/agenda-list.component';
 import { AtendimentoListComponent } from './components/atendimento-list/atendimento-list.component';
+import { EspecialidadeFormComponent } from './components/especialidade-form/especialidade-form.component';
+import { EspecialidadeComponent } from './components/especialidade/especialidade.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfissionalFormComponent } from './components/profissional-form/profissional-form.component';
 import { ProfissionalComponent } from './components/profissional/profissional.component';
@@ -21,7 +23,9 @@ const routes: Routes = [
     { path: 'config', canActivate: [AutenticacaoGuard], data: {papel: "ROLE_ADMIN"}, children: [
       { path: 'usuarios', component: UsuarioComponent},
       { path: 'unidades', component: UnidadesComponent},
-      { path: 'unidades/form', component: UnidadeFormComponent}
+      { path: 'unidades/form', component: UnidadeFormComponent},
+      { path: 'especialidades', component: EspecialidadeComponent},
+      { path: 'especialidades/form', component: EspecialidadeFormComponent},
     ]}
   ]},
   { path: 'login', component: LoginComponent },
