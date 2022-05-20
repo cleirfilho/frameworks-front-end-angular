@@ -20,6 +20,7 @@ import { ProfissionalComponent } from './components/profissional/profissional.co
 import { ProfissionalFormComponent } from './components/profissional-form/profissional-form.component';
 import { EspecialidadeComponent } from './components/especialidade/especialidade.component';
 import { EspecialidadeFormComponent } from './components/especialidade-form/especialidade-form.component';
+import { UsuarioFormComponent } from './components/usuario-form/usuario-form.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { EspecialidadeFormComponent } from './components/especialidade-form/espe
     ProfissionalComponent,
     ProfissionalFormComponent,
     EspecialidadeComponent,
-    EspecialidadeFormComponent
+    EspecialidadeFormComponent,
+    UsuarioFormComponent
   ],
   imports: [
     BrowserModule,

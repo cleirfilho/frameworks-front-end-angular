@@ -1,1 +1,31 @@
-<p>usuario works!</p>
+<app-barra-comandos (eventoBusca)="get($event)"></app-barra-comandos>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Usuário</th>
+            <th>Ativo</th>
+            <th>Papel</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let r of registros; index as i">
+            <td class="fit">{{i+1}}</td>
+            <td>{{r.nomeCompleto}}</td>
+            <td>{{r.nomeUsuario}}</td>
+            <td>{{r.ativo}}</td>
+            <td>{{r.papel}}</td>
+            <td>
+                <a routerLink="/config/usuario/form" [queryParams]="{id: r.id}" class="botao">Editar</a>
+                <a (click)="delete(r.id)" class="botao cancelar">Excluir</a>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="6">Total de registros: {{registros?.length}}</td>
+        </tr>
+    </tfoot>
+</table>
