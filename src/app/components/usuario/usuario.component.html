@@ -18,7 +18,7 @@
             <td>{{r.ativo}}</td>
             <td>{{r.papel}}</td>
             <td>
-                <a routerLink="/config/usuario/form" [queryParams]="{id: r.id}" class="botao">Editar</a>
+                <a routerLink="/config/usuarios/form" [queryParams]="{id: r.id}" class="botao">Editar</a>
                 <a (click)="delete(r.id)" class="botao cancelar">Excluir</a>
             </td>
         </tr>

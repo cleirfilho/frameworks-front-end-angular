@@ -10,6 +10,7 @@ import { ProfissionalFormComponent } from './components/profissional-form/profis
 import { ProfissionalComponent } from './components/profissional/profissional.component';
 import { UnidadeFormComponent } from './components/unidade-form/unidade-form.component';
 import { UnidadesComponent } from './components/unidades/unidades.component';
+import { UsuarioFormComponent } from './components/usuario-form/usuario-form.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { AutenticacaoGuard } from './services/autenticacao.guard';
 
@@ -22,6 +23,7 @@ const routes: Routes = [
     { path: 'profissionais/form', component: ProfissionalFormComponent},
     { path: 'config', canActivate: [AutenticacaoGuard], data: {papel: "ROLE_ADMIN"}, children: [
       { path: 'usuarios', component: UsuarioComponent},
+      { path: 'usuarios/form', component: UsuarioFormComponent},
       { path: 'unidades', component: UnidadesComponent},
       { path: 'unidades/form', component: UnidadeFormComponent},
       { path: 'especialidades', component: EspecialidadeComponent},
