@@ -21,6 +21,10 @@ import { ProfissionalFormComponent } from './components/profissional-form/profis
 import { EspecialidadeComponent } from './components/especialidade/especialidade.component';
 import { EspecialidadeFormComponent } from './components/especialidade-form/especialidade-form.component';
 import { UsuarioFormComponent } from './components/usuario-form/usuario-form.component';
+import { PacientesComponent } from './components/pacientes/pacientes.component';
+import { PacientesFormComponent } from './components/pacientes-form/pacientes-form.component';
+import { ConveniosComponent } from './components/convenios/convenios.component';
+import { ConveniosFormComponent } from './components/convenios-form/convenios-form.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,11 @@ import { UsuarioFormComponent } from './components/usuario-form/usuario-form.com
     ProfissionalFormComponent,
     EspecialidadeComponent,
     EspecialidadeFormComponent,
-    UsuarioFormComponent
+    UsuarioFormComponent,
+    PacientesComponent,
+    PacientesFormComponent,
+    ConveniosComponent,
+    ConveniosFormComponent
   ],
   imports: [
     BrowserModule,
