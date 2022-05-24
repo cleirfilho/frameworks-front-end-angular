@@ -2,6 +2,6 @@
     <a routerLink="./form" class="botao">Adicionar</a>
     <div>
         <label for="busca">Busca</label>
-        <input type="search" id="termoBusca" placeholder="Digite para pesquisar" #termoBusca="ngModel" ngModel (ngModelChange)="busca(termoBusca.value)">
+        <input type="search" ngModel  placeholder="Digite para pesquisar" #termoBusca="ngModel"  (ngModelChange)="busca(termoBusca.value)">
     </div>
 </div>

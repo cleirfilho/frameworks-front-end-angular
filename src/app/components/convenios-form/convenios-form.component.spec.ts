@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { HttpClientTestingModule} from '@angular/common/http/testing';
+
 import { ConveniosFormComponent } from './convenios-form.component';
 
 describe('ConveniosFormComponent', () => {
@@ -8,6 +10,9 @@ describe('ConveniosFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+             imports: [
+        HttpClientTestingModule,
+      ],
       declarations: [ ConveniosFormComponent ]
     })
     .compileComponents();
