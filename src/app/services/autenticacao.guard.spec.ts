@@ -35,7 +35,6 @@ describe('AutenticacaoGuard', () => {
     papel: "ROLE_ADMIN"
 }
   it('Usuário está autenticado', inject([AutenticacaoGuard], (service: AutenticacaoGuard) => {
-
    sessionStorage.setItem('usuario', JSON.stringify(usuario));
    expect(service.canActivate(route)).toBeTruthy();
   }));
