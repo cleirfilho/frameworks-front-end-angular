@@ -56,7 +56,7 @@ export class LoginService {
           this.autenticado = true;
           this.usuario = usuario;
           sessionStorage.setItem('usuario', JSON.stringify(usuario));
-          this.router.navigate(['/']);
+          this.router.navigate(['/agenda']);
         }
       }
     })

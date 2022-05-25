@@ -13,7 +13,7 @@ export class AutenticacaoGuard implements CanActivate {
     const autenticado = this.servico.verificaLogin();
     if (autenticado) {
       const papelUsuario = this.servico.getPapel();
-      const papelExigido = route.data['papel'];
+      const papelExigido = null;
       if (papelExigido && papelUsuario != papelExigido) {
         return false;
       }
