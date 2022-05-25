@@ -36,7 +36,14 @@ describe('LoginService', () => {
       ativo: true,
       papel: "ROLE_ADMIN",
  }
-  it('Usuário e senha válidos', inject([LoginService], (service: LoginService) => {  
-    expect(service.login(user)).toBe();
-  }));
+
+  it('Validar se o usuário não esta logado', () => {
+    sessionStorage.removeItem('usuario');
+    expect(service.verificaLogin()).toBeFalsy();
+  });
+
+  it('Validar se o usuário está logado', () => {
+    sessionStorage.setItem('usuario', JSON.stringify(user));
+    expect(service.verificaLogin()).toBeTruthy();
+  });
 });

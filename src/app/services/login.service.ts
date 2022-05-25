@@ -36,6 +36,7 @@ export class LoginService {
         this.autenticado = true;
       } else {
         this.router.navigate(['/login']);
+        return false
       }
     }
     return this.isAutenticado();
