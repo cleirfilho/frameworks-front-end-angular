@@ -18,6 +18,7 @@ export class AtendimentoListComponent implements OnInit, IComponentList<Atendime
   ) { }
 
   registros: Atendimento[] = Array<Atendimento>();
+  busca_profissional:string | null = ''
 
   get(termoBusca?: string): void {
     this.servico.get(termoBusca).subscribe({
@@ -45,7 +46,13 @@ export class AtendimentoListComponent implements OnInit, IComponentList<Atendime
   }
 
   ngOnInit(): void {
-    this.get();
+    this.busca_profissional = sessionStorage.getItem('busca_profissional');
+    if(this.busca_profissional){
+      this.get(this.busca_profissional);
+    }else{
+      this.get();
+    }
+   
   }
 
 }

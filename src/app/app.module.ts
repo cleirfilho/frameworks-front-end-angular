@@ -25,6 +25,7 @@ import { PacientesComponent } from './components/pacientes/pacientes.component';
 import { PacientesFormComponent } from './components/pacientes-form/pacientes-form.component';
 import { ConveniosComponent } from './components/convenios/convenios.component';
 import { ConveniosFormComponent } from './components/convenios-form/convenios-form.component';
+import { BuscaProfissionalComponent } from './components/busca-profissional/busca-profissional.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { ConveniosFormComponent } from './components/convenios-form/convenios-fo
     PacientesComponent,
     PacientesFormComponent,
     ConveniosComponent,
-    ConveniosFormComponent
+    ConveniosFormComponent,
+    BuscaProfissionalComponent
   ],
   imports: [
     BrowserModule,
