@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Atendimento } from 'src/app/models/atendimento';
+import { Profissional } from 'src/app/models/profissional';
 import { AlertaService } from 'src/app/services/alerta.service';
 import { AtendimentoService } from 'src/app/services/atendimento.service';
 import { IComponentList } from '../i-component-list';
@@ -18,7 +19,7 @@ export class AgendaListComponent implements OnInit, IComponentList<Atendimento> 
   ) { }
 
   registros: Atendimento[] = Array<Atendimento>();
-   busca_profissional:string | null = ''
+   busca_profissional:Profissional = <Profissional>{}
    
   get(termoBusca?: string): void {
     this.servico.get(termoBusca).subscribe({
@@ -53,9 +54,10 @@ export class AgendaListComponent implements OnInit, IComponentList<Atendimento> 
   }
 
   ngOnInit(): void {
-     this.busca_profissional = sessionStorage.getItem('busca_profissional');
+     this.busca_profissional =  JSON.parse(sessionStorage.getItem('busca_profissional') || '{}');
+     
     if(this.busca_profissional){
-      this.get(this.busca_profissional);
+      this.get(this.busca_profissional.nome);
     }else{
       this.get();
     }

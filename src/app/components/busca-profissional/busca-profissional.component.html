@@ -1,9 +1,9 @@
 <div id="comandos">
     <div>
         <label for="busca">Filtrar dados do profissional</label>
-        <select name="profissional"  [(ngModel)]="busca_profissional" [compareWith]="compareById" ngModel #termoBuscaProfissional="ngModel" (ngModelChange)="busca(termoBuscaProfissional.value)" required>
-            <option value="" >Buscar todos os profissionais</option>
-            <option *ngFor="let item of registros ; index as i"  [ngValue]="item.nome">{{item.nome}}</option>
+        <select name="profissional"  [(ngModel)]="busca_profissional" [compareWith]="compareById" ngModel #termoBuscaProfissional="ngModel" (ngModelChange)="busca(termoBuscaProfissional.value)">
+            <option value="" [selected]="true">Buscar todos os profissionais</option>
+            <option *ngFor="let item of registros ; index as i"  [ngValue]="item">{{item.nome}}</option>
         </select>
     </div>
 </div>

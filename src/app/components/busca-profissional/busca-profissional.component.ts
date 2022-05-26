@@ -13,14 +13,14 @@ import { IComponentList } from '../i-component-list';
 })
 export class BuscaProfissionalComponent implements OnInit, IComponentList<Profissional> {
 
-   busca_profissional:string | null = ''
+  busca_profissional:Profissional = <Profissional>{}
 
   constructor( private servico:ProfissionalService,) { }
   @Output() eventoBuscaProfissional = new EventEmitter();
 
-  busca(termoBuscaProfissional: string) {
-    this.eventoBuscaProfissional.emit(termoBuscaProfissional);
-    sessionStorage.setItem('busca_profissional',termoBuscaProfissional)
+  busca(termoBuscaProfissional: Profissional) {
+    this.eventoBuscaProfissional.emit(termoBuscaProfissional.nome);
+    sessionStorage.setItem('busca_profissional', JSON.stringify(termoBuscaProfissional))
   }
   
   registros: Profissional[] = Array<Profissional>();
@@ -30,7 +30,12 @@ export class BuscaProfissionalComponent implements OnInit, IComponentList<Profis
     this.servico.get(termoBusca).subscribe({
       next: (reposta : Profissional[]) => {
         this.registros = reposta;
+      },
+      complete: () => {
+        this.busca_profissional = JSON.parse(sessionStorage.getItem('busca_profissional') || '{}');
+
       }
+
     })
   }
   getById(id: number): Observable<Profissional> {
@@ -47,7 +52,6 @@ export class BuscaProfissionalComponent implements OnInit, IComponentList<Profis
   }
 
   ngOnInit(): void {
-    this.busca_profissional = sessionStorage.getItem('busca_profissional'); 
     this.get()
   }
 
