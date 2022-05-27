@@ -34,6 +34,24 @@ export class AgendaFormComponent implements OnInit, IComponentForm<Atendimento> 
   profissionais: Profissional[] = Array<Profissional>();
   convenios: Convenio[] = Array<Convenio>();
   pacientes: Paciente[] = Array<Paciente>();
+  horas_disponiveis: Array<string> = [
+    "14:00:00",
+    "14:30:00",
+    "15:00:00",
+    "15:30:00",
+    "16:00:00",
+    "16:30:00",
+    "17:00:00",
+    "17:30:00",
+    "18:00:00",
+    "18:30:00",
+    "19:00:00",
+    "19:30:00",
+    "20:00:00",
+  ]
+
+
+
   compareById = Utils.compareById;
 
   submit(form: NgForm): void {
@@ -59,6 +77,12 @@ export class AgendaFormComponent implements OnInit, IComponentForm<Atendimento> 
       })
     }
   }
+
+  
+  busca_hora(termoBuscaProfissional: Profissional) {
+    // parei aqui .....
+  }
+  
 
   ngOnInit(): void {
 
