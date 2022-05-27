@@ -35,7 +35,8 @@ export class AgendaFormComponent implements OnInit, IComponentForm<Atendimento> 
   convenios: Convenio[] = Array<Convenio>();
   pacientes: Paciente[] = Array<Paciente>();
   horas_agendadas: Array<string> = [];
-  horas_disponiveis: Array<string> = [
+  horas_disponiveis: Array<string> = [];
+  horas_padrao: Array<string> = [
     "14:00:00",
     "14:30:00",
     "15:00:00",
@@ -49,7 +50,7 @@ export class AgendaFormComponent implements OnInit, IComponentForm<Atendimento> 
     "19:00:00",
     "19:30:00",
     "20:00:00",
-  ]
+  ];
 
 
 
@@ -79,23 +80,23 @@ export class AgendaFormComponent implements OnInit, IComponentForm<Atendimento> 
     }
   }
 
- 
-  
+
+
   busca_hora(termoBuscaProfissional: Profissional, termoBuscaHora : string) {
-   
+
   if(termoBuscaProfissional && termoBuscaHora){
     this.servico.getProfissionalHora(termoBuscaProfissional.id,termoBuscaHora).subscribe({
       next: (resposta : []) =>{
         this.horas_agendadas = resposta;
-        this.horas_disponiveis = this.horas_disponiveis.filter( (objeto) => { 
-          return this.horas_agendadas.indexOf(objeto) == -1 
+        this.horas_disponiveis = this.horas_padrao.filter( (objeto) => {
+          return this.horas_agendadas.indexOf(objeto) == -1
         });
         console.log(this.horas_agendadas)
       }
     })
   }
   }
-  
+
 
   ngOnInit(): void {
 
