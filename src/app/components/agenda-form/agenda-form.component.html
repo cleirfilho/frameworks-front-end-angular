@@ -4,12 +4,12 @@
         <input type="hidden" name="id" [(ngModel)]="registro.id">
 
         <label for="profissional">Profissional</label>
-        <select [(ngModel)]="registro.profissional" name="profissional" [compareWith]="compareById"  ngModel #termoBuscaHora="ngModel" (ngModelChange)="busca_hora(termoBuscaHora.value)" required>
+        <select [(ngModel)]="registro.profissional" name="profissional" [compareWith]="compareById"  ngModel #termoBuscaProfissional="ngModel" (ngModelChange)="busca_hora(termoBuscaProfissional.value ,termoBuscaHora.value)" required>
             <option *ngFor="let item of profissionais" [ngValue]="item">{{item.nome}}</option>
         </select>
 
         <label for="data">Data</label>
-        <input [(ngModel)]="registro.data" type="date" name="data" required>
+        <input [(ngModel)]="registro.data" type="date" name="data" ngModel #termoBuscaHora="ngModel" (ngModelChange)="busca_hora(termoBuscaProfissional.value , termoBuscaHora.value)" required>
 
         <label for="hora">Hora</label>
         <select [(ngModel)]="registro.hora" name="hora" required>

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Atendimento } from '../models/atendimento';
+import { Profissional } from '../models/profissional';
 import { ICrudService } from './i-crud-service';
 
 @Injectable({
@@ -43,6 +44,14 @@ export class AtendimentoService implements ICrudService<Atendimento> {
   updateStatus(id: number): Observable<Atendimento> {
     let url = this.apiUrl + 'status/' + id;
     return this.http.put<Atendimento>(url, null);
+  }
+
+  getProfissionalHora(termoBuscaProfissional: number, termoBuscaData?: string): Observable<[]> {
+    let url = this.apiUrl;
+   
+      url += 'horarios/profissional/'+termoBuscaProfissional+'/data/'+termoBuscaData;
+  
+    return this.http.get<[]>(url);
   }
 
 }
