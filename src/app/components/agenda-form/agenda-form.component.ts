@@ -82,19 +82,30 @@ export class AgendaFormComponent implements OnInit, IComponentForm<Atendimento> 
 
 
 
-  busca_hora(termoBuscaProfissional: Profissional, termoBuscaHora : string) {
+  busca_hora(termoBuscaProfissional: Profissional, termoBuscaHora: string) {
 
-  if(termoBuscaProfissional && termoBuscaHora){
-    this.servico.getProfissionalHora(termoBuscaProfissional.id,termoBuscaHora).subscribe({
-      next: (resposta : []) =>{
-        this.horas_agendadas = resposta;
-        this.horas_disponiveis = this.horas_padrao.filter( (objeto) => {
-          return this.horas_agendadas.indexOf(objeto) == -1
-        });
-        console.log(this.horas_agendadas)
-      }
-    })
-  }
+    if (termoBuscaProfissional && termoBuscaHora) {
+      this.servico.getProfissionalHora(termoBuscaProfissional.id, termoBuscaHora).subscribe({
+        next: (resposta: []) => {
+          this.horas_agendadas = resposta;
+          this.horas_disponiveis = this.horas_padrao.filter((objeto) => {
+            // se registro for diferende de null significa que esta realizando uma edição de usuário 
+            if (this.registro != null) {
+              // se for edição retira das horas agendadas a hora que esta sendo editadas para permitir mostrar ao usuário
+              this.horas_agendadas = this.horas_agendadas.filter((objeto) => {
+                return this.registro.hora.indexOf(objeto) == -1
+              });
+              // retorna as horas que estão livres para serem agendadas
+              return this.horas_agendadas.indexOf(objeto) == -1
+            } else {
+               // caso não seja edição de usuário retorna as horas que estão livres para serem agendadas
+              return this.horas_agendadas.indexOf(objeto) == -1
+            }
+          });
+
+        }
+      })
+    }
   }
 
 
@@ -121,8 +132,9 @@ export class AgendaFormComponent implements OnInit, IComponentForm<Atendimento> 
     const id = this.route.snapshot.queryParamMap.get('id');
     if (id) {
       this.servico.getById(+id).subscribe({
-        next: (resposta: Atendimento) =>{
+        next: (resposta: Atendimento) => {
           this.registro = resposta;
+          this.busca_hora(this.registro.profissional, this.registro.data)
         }
       })
     }
