@@ -7,9 +7,8 @@ import { ConveniosComponent } from './components/convenios/convenios.component';
 import { EspecialidadeFormComponent } from './components/especialidade-form/especialidade-form.component';
 import { EspecialidadeComponent } from './components/especialidade/especialidade.component';
 import { LoginComponent } from './components/login/login.component';
-import { PacientesComponent } from './components/pacientes/pacientes.component';
-import { ProfissionalFormComponent } from './components/profissional-form/profissional-form.component';
-import { ProfissionalComponent } from './components/profissional/profissional.component';
+import { PacienteFormComponent } from './components/paciente-form/paciente-form.component';
+import { PacienteListComponent } from './components/paciente-list/paciente-list.component';
 import { UnidadeFormComponent } from './components/unidade-form/unidade-form.component';
 import { UnidadesComponent } from './components/unidades/unidades.component';
 import { UsuarioFormComponent } from './components/usuario-form/usuario-form.component';
@@ -21,10 +20,8 @@ const routes: Routes = [
     { path: 'agenda', component: AgendaListComponent },
     { path: 'agenda/form', component: AgendaFormComponent },
     { path: 'atendimento', component: AtendimentoListComponent},
-    { path: 'profissionais', component: ProfissionalComponent},
-    { path: 'convenios', component: ConveniosComponent},
-    { path: 'pacientes', component: PacientesComponent},
-    { path: 'profissionais/form', component: ProfissionalFormComponent},
+    {path: 'paciente', component: PacienteListComponent},
+    {path: 'paciente/form', component: PacienteFormComponent},
     { path: 'config', canActivate: [AutenticacaoGuard], data: {papel: "ROLE_ADMIN"}, children: [
       { path: 'usuarios', component: UsuarioComponent},
       { path: 'usuarios/form', component: UsuarioFormComponent},

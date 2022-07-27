@@ -1,0 +1,53 @@
+<form (ngSubmit)="submit(form)" #form="ngForm">
+    <form (ngSubmit)="submit(form)" #form="ngForm">
+        <div class="grid">
+    
+            <input type="hidden" name="id" [(ngModel)]="registro.id">
+    
+            <label for="paciente">Paciente</label>
+            <input [(ngModel)]="registro.nome" type="text" name="nomePaciente" required>
+    
+            <label for="dataNacimento">Data de Nacimento</label>
+            <input [(ngModel)]="registro.dataNascimento" type="date" name="dataNascimento" required>
+        
+        
+            <label for="sexo">Sexo</label>
+            <select [(ngModel)]="registro.sexo" name="sexo" required>
+                <option value="M">M</option>
+                <option value="F">F</option>
+            </select>
+
+            <label for="grupoSanguineo">Grupo Sanguíneo</label>
+            <select [(ngModel)]="registro.grupoSanguineo" name="grupoSanguineo" required>
+                <option value="A_POSITIVO">A_POSITIVO</option>
+                <option value="A_NEGATIVO">A_NEGATIVO</option>
+                <option value="B_POSITIVO">B_POSITIVO</option>
+                <option value="B_NEGATIVO">B_NEGATIVO</option>
+                <option value="AB_POSITIVO">AB_POSITIVO</option>
+                <option value="AB_NEGATIVO">AB_NEGATIVO</option>
+                <option value="O_POSITIVO">O_POSITIVO</option>
+                <option value="O_NEGATIVO">O_NEGATIVO</option>
+            </select>
+
+            <label for="Telefone">Telefone</label>
+            <input [(ngModel)]="registro.telefone" type="text" name="telefone" required>
+
+            <label for="Email">Email</label>
+            <input [(ngModel)]="registro.email" type="text" name="email" required>
+
+            <label for="Endereco">Endereço</label>
+            <input [(ngModel)]="registro.endereco" type="text" name="endereco" required>
+
+            <label for="Estado">Estado</label>
+            <input [(ngModel)]="registro.estado" type="text" name="estado" required>
+
+            <label for="Cidade">Cidade</label>
+            <input [(ngModel)]="registro.cidade" type="text" name="cidade" required>
+
+            <label for="Cep">Cep</label>
+            <input [(ngModel)]="registro.cep" type="text" name="cep" required>
+    
+        </div>
+        <input type="button" value="Cancelar" routerLink="../">
+        <input type="submit" value="Salvar" [disabled]="form.invalid">
+</form>

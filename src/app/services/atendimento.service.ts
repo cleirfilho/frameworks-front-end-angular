@@ -46,12 +46,15 @@ export class AtendimentoService implements ICrudService<Atendimento> {
     return this.http.put<Atendimento>(url, null);
   }
 
-  getProfissionalHora(termoBuscaProfissional: number, termoBuscaData?: string): Observable<[]> {
+  //CONECTA AO ENDPOINT E RETORNA A LISTA DE PROFISSIONAIS PELO ID
+  getFiltro(termoBusca?: string): Observable<Atendimento[]> {
     let url = this.apiUrl;
-   
-      url += 'horarios/profissional/'+termoBuscaProfissional+'/data/'+termoBuscaData;
-  
-    return this.http.get<[]>(url);
+    if (termoBusca) {
+      url += 'busca/profissional/' + termoBusca;
+
+    }
+    return this.http.get<Atendimento[]>(url);
+
   }
 
 }

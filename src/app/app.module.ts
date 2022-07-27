@@ -14,18 +14,10 @@ import { AlertaComponent } from './components/alerta/alerta.component';
 import { LoginComponent } from './components/login/login.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { RequisicaoInterceptor } from './interceptors/requisicao.interceptor';
-import { UnidadesComponent } from './components/unidades/unidades.component';
-import { UnidadeFormComponent } from './components/unidade-form/unidade-form.component';
-import { ProfissionalComponent } from './components/profissional/profissional.component';
-import { ProfissionalFormComponent } from './components/profissional-form/profissional-form.component';
-import { EspecialidadeComponent } from './components/especialidade/especialidade.component';
-import { EspecialidadeFormComponent } from './components/especialidade-form/especialidade-form.component';
-import { UsuarioFormComponent } from './components/usuario-form/usuario-form.component';
-import { PacientesComponent } from './components/pacientes/pacientes.component';
-import { PacientesFormComponent } from './components/pacientes-form/pacientes-form.component';
-import { ConveniosComponent } from './components/convenios/convenios.component';
-import { ConveniosFormComponent } from './components/convenios-form/convenios-form.component';
-import { BuscaProfissionalComponent } from './components/busca-profissional/busca-profissional.component';
+import { PacienteListComponent } from './components/paciente-list/paciente-list.component';
+import { PacienteFormComponent } from './components/paciente-form/paciente-form.component';
+import { FiltragemBuscaComponent } from './components/filtragem-busca/filtragem-busca.component'
+
 
 @NgModule({
   declarations: [
@@ -37,24 +29,16 @@ import { BuscaProfissionalComponent } from './components/busca-profissional/busc
     AlertaComponent,
     LoginComponent,
     UsuarioComponent,
-    UnidadesComponent,
-    UnidadeFormComponent,
-    ProfissionalComponent,
-    ProfissionalFormComponent,
-    EspecialidadeComponent,
-    EspecialidadeFormComponent,
-    UsuarioFormComponent,
-    PacientesComponent,
-    PacientesFormComponent,
-    ConveniosComponent,
-    ConveniosFormComponent,
-    BuscaProfissionalComponent
+    PacienteListComponent,
+    PacienteFormComponent,
+    FiltragemBuscaComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErroInterceptor, multi: true },

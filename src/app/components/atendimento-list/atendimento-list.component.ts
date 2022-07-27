@@ -46,6 +46,16 @@ export class AtendimentoListComponent implements OnInit, IComponentList<Atendime
     }
   }
 
+  getFiltro(termoBusca?: string): void {
+    this.servico.getFiltro(termoBusca).subscribe({
+      next: (resposta: Atendimento[]) => {
+        this.registros = resposta.filter(item => {
+          return ['CHEGADA', 'ATENDIMENTO'].includes(item.status);
+        });
+      }
+    })
+  }
+
   ngOnInit(): void {
     this.busca_profissional =  JSON.parse(sessionStorage.getItem('busca_profissional') || '{}');
      
